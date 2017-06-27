@@ -30,31 +30,16 @@ import Nav from './components/Nav';
  * https://github.com/facebook/react/pull/6914
  */
 class App extends PureComponent{
-  state = {
-    inJS: true
-  }
-
-  toggleInJS = (e) => {
-    this.setState({
-      inJS: !this.state.inJS
-    })
-  }
 
   render(){
-    const {inJS} = this.state
     const NavWithRouter = withRouter(Nav)
     return(
       <Router>
         <div className="rc-typography">
-          <NavWithRouter toggleInJS={this.toggleInJS} inJS={inJS}/>
+          <NavWithRouter/>
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route path="/search/:search" render={p => 
-              <Search inJS={inJS} {...p}/>
-            }/>
-            <Route path="/searchjs/:search" render={p => 
-              <Search inJS={inJS} {...p}/>
-            }/>
+            <Route path="/search/:search" component={Search}/>
             <Route path="/:username" component={User}/>
             <Route component={NotFound}/>
           </Switch>

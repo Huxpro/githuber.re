@@ -42,6 +42,15 @@ export default {
     {
       "login": "geek",
       "avatar_url": "https://avatars3.githubusercontent.com/u/441346?v=3"
-    }
+    },
+    {
+      "login": "dexteryy",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/43011?v=3"
+    },
+    {
+      "login": "yjhjstz",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/3832082?v=3"
+    },
+    // missing 陈亮、郑晔 's github
   ]
 }

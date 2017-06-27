@@ -13,15 +13,6 @@ const Model = {
       .then(_ => LOADING.done())
   },
 
-  handleError(err, failure){
-    console.log(err)
-    err.response.json()
-      .then((data) => {
-        if(data.message) failure(data.message)
-        failure(err)
-      })
-  },
-
   checkStatus(resp){
     if(resp.ok) return resp 
     console.log(resp)
@@ -39,14 +30,12 @@ const Model = {
     this._get(api, success, failure)
   },
 
+  // not used
   searchUsersInJS(search, success, failure){
     // only top 100 + only javascript + sort by followers
     let api= `https://api.github.com/search/users?q=${search}+language:javascript&sort=followers`
     this._get(api, success, failure)
   }
-
-
-
 }
 
 export default Model;

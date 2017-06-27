@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 export default class Nav extends Component {
+
   onSearch = (e) => {
     e.preventDefault()
     const val = this.$search.value
@@ -9,13 +10,9 @@ export default class Nav extends Component {
     if(!val) return;
 
     // redirect
-    const {history, inJS} = this.props;
-    if(inJS){
-      history.push(`/searchjs/${val}`)
-    }else{
-      history.push(`/search/${val}`)
-    }
-    
+    const {history} = this.props;
+    window.$h = history
+    history.push(`/search/${val}`)
 
     // reset
     this.$search.value = ""
@@ -23,17 +20,11 @@ export default class Nav extends Component {
   }
 
   render() {
-    const {inJS, toggleInJS} = this.props
-    const JS = (!inJS) 
-      ? <span>.JS</span>
-      : <span style={{color: "#ff1744"}}>.JS</span>
-
     return (
       <div className="rc-navbar app-navbar">
-        <h1> 
-           <Link to="/">Githuber</Link>
-           <span onClick={toggleInJS}>{JS}</span>
-        </h1>
+        <Link to="/">
+          <h1> Githuber.JS </h1>
+        </Link>
         <form className="flex" onSubmit={this.onSearch}> 
           <input  
             type="search" 

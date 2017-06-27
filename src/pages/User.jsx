@@ -32,9 +32,7 @@ export default class User extends Component {
     // error state
     if(error) return (
       <div className="app-container">
-        <h4 className="rc-box"> 
-          {String(error)}
-        </h4>
+        <h4 className="rc-box"> {String(error)} </h4>
       </div>
     )
 
@@ -46,6 +44,7 @@ export default class User extends Component {
             {data.name} 
           </a>
         </h3>
+        <h5> {data.login} </h5>
         <h5> {data.bio } </h5>
         <section className="rc-typography--caption-large">
           FOLLOWING
