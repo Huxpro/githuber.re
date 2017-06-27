@@ -1,0 +1,20 @@
+{
+  "name": "Githuber.JS",
+  "short_name": "Githuber.JS",
+  "icons": [
+    {
+      "src": "logo-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }, {
+      "src": "logo-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#f36a84",
+  "background_color": "#ffffff"
+}
