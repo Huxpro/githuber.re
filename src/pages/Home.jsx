@@ -26,7 +26,7 @@ export default class Home extends Component {
       <div className="rc-list app-container">
         <h4 className="rc-box" style={{
           marginBottom: 0
-        }}> RECO - JSConfCN 2017</h4>
+        }}> RECOMM - JSConfCN 2017</h4>
         {list}
       </div>
     )
