@@ -38,7 +38,7 @@ export default class Search extends Component {
     if (!data) return null;
 
     // empty state
-    if(data.total_count == 0){
+    if(data.total_count === 0){
       return (
         <div className="app-container">
           <h4 className="rc-box">
@@ -51,7 +51,7 @@ export default class Search extends Component {
     const list = data.items.map(item => (
       <Link to={`/${item.login}`} key={item.id}>
         <li className="rc-list-item">
-          <img src={item.avatar_url} />
+          <img src={item.avatar_url} alt={item.login} />
           <span className="rc-list-item__text">
             {item.login}
           </span>

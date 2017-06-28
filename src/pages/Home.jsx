@@ -14,7 +14,7 @@ export default class Home extends Component {
     const list = data.items.map(item => (
       <Link to={`/${item.login}`} key={item.login}>
         <li className="rc-list-item">
-          <img src={item.avatar_url} />
+          <img src={item.avatar_url} alt={item.login} />
           <span className="rc-list-item__text">
             {item.login}
           </span>

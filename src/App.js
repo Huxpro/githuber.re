@@ -3,8 +3,7 @@ import {
   BrowserRouter as Router,
   withRouter,
   Switch,
-  Route,
-  Link
+  Route
 } from 'react-router-dom';
 
 // import styles 

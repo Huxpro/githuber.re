@@ -27,7 +27,11 @@ export default class User extends Component {
     const { data, error } = this.state;
 
      // before any response
-    if(!data && !error) return null;
+    if(!data && !error) return (
+      <div className="rc-box app-user app-container">
+        <img alt=""/>
+      </div>
+    );
 
     // error state
     if(error) return (
@@ -38,7 +42,7 @@ export default class User extends Component {
 
     return (
       <div className="rc-box app-user app-container">
-        <img src={data.avatar_url}/>
+        <img src={data.avatar_url} alt={data.name} />
         <h3>
           <a href={data.html_url}>
             {data.name} 
