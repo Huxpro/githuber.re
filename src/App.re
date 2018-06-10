@@ -1,21 +1,38 @@
-[%bs.raw {|require('./App.css')|}];
-
 [@bs.module] external logo : string = "./logo.svg";
 
-let component = ReasonReact.statelessComponent("App");
+/* import styles */
+[%bs.raw {|require('./style/rc.css')|}];
 
-let make = (~message, _children) => {
+[%bs.raw {|require('./style/app.css')|}];
+
+[%bs.raw {|require('./style/nprogress.css')|}];
+
+type action =
+  | Navigate(ReasonReact.reactElement);
+
+type state = {currentRoute: ReasonReact.reactElement};
+
+let component = ReasonReact.reducerComponent("App");
+
+let make = _children => {
   ...component,
-  render: _self =>
-    <div className="App">
-      <div className="App-header">
-        <img src=logo className="App-logo" alt="logo" />
-        <h2> (ReasonReact.string(message)) </h2>
-      </div>
-      <p className="App-intro">
-        (ReasonReact.string("To get started, edit"))
-        <code> (ReasonReact.string(" src/App.re ")) </code>
-        (ReasonReact.string("and save to reload."))
-      </p>
-    </div>,
+  initialState: () => {currentRoute: <Home />},
+  didMount: self => {
+    let watcherID =
+      ReasonReact.Router.watchUrl(url =>
+        switch (url.path) {
+        | [] => self.send(Navigate(<Home />))
+        | ["search", search] => self.send(Navigate(<Search search />))
+        | ["user", username] => self.send(Navigate(<User username />))
+        | _ => self.send(Navigate(<NotFound />))
+        }
+      );
+    self.onUnmount(() => ReasonReact.Router.unwatchUrl(watcherID));
+  },
+  reducer: (action, _state) =>
+    switch (action) {
+    | Navigate(comp) => ReasonReact.Update({currentRoute: comp})
+    },
+  render: self =>
+    <div className="rc-typography"> <Nav /> self.state.currentRoute </div>,
 };
