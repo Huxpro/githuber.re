@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "bs-fetch": "^0.3.0",
+    "graphql_ppx": "^0.2.3",
     "reason-scripts": "0.9.0"
   },
   "scripts": {

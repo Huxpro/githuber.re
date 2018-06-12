@@ -1,11 +1,12 @@
 {
   "name": "reason-scripts",
-  "sources": ["src", "src/components", "src/pages"],
-  "bs-dependencies": ["reason-react", "@glennsl/bs-jest"],
+  "sources": ["src", "src/components", "src/pages", "src/utils"],
+  "bs-dependencies": ["reason-react", "@glennsl/bs-jest", "bs-fetch"],
   "reason": {
     "react-jsx": 2
   },
   "bsc-flags": ["-bs-super-errors"],
+  "ppx-flags": ["graphql_ppx/ppx"],
   "refmt": 3,
   "package-specs": {
     "module": "es6",

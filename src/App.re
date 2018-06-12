@@ -7,27 +7,36 @@
 
 [%bs.raw {|require('./style/nprogress.css')|}];
 
-type action =
-  | Navigate(ReasonReact.reactElement);
+/* alias */
+type reactElement = ReasonReact.reactElement;
 
-type state = {currentRoute: ReasonReact.reactElement};
+module Router = ReasonReact.Router;
+
+/* component */
+type action =
+  | Navigate(reactElement);
+
+type state = {currentRoute: reactElement};
 
 let component = ReasonReact.reducerComponent("App");
 
+let comp_of_path = url =>
+  switch (Router.(url.path)) {
+  | [] => <Home />
+  | ["search", search] => <Search search />
+  | ["user", username] => <User username />
+  | _ => <NotFound />
+  };
+
 let make = _children => {
   ...component,
-  initialState: () => {currentRoute: <Home />},
+  initialState: () => {
+    currentRoute: comp_of_path(Router.dangerouslyGetInitialUrl()),
+  },
   didMount: self => {
     let watcherID =
-      ReasonReact.Router.watchUrl(url =>
-        switch (url.path) {
-        | [] => self.send(Navigate(<Home />))
-        | ["search", search] => self.send(Navigate(<Search search />))
-        | ["user", username] => self.send(Navigate(<User username />))
-        | _ => self.send(Navigate(<NotFound />))
-        }
-      );
-    self.onUnmount(() => ReasonReact.Router.unwatchUrl(watcherID));
+      Router.watchUrl(url => Navigate(comp_of_path(url)) |> self.send);
+    self.onUnmount(() => Router.unwatchUrl(watcherID));
   },
   reducer: (action, _state) =>
     switch (action) {

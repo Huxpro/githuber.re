@@ -5,7 +5,9 @@ let make = _children => {
   render: _self =>
     <div className="App">
       <div className="App-header">
-        <h2> (ReasonReact.string("404")) </h2>
+        <div className="app-container">
+          <h2 className="rc-box"> (ReasonReact.string("404")) </h2>
+        </div>
       </div>
     </div>,
 };

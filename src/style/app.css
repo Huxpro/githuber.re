@@ -1,11 +1,11 @@
 /* utils */
-.flex{
+.flex {
   display: flex;
   align-items: center;
 }
 
 /* app */
-.app-navbar input{
+.app-navbar input {
   flex: 1;
   max-width: 321px;
   padding: 5px 0;
@@ -18,50 +18,50 @@
   font-size: 16px;
   font-weight: bold;
 }
-.app-navbar button{
+.app-navbar button {
   height: 36px;
   margin-left: -14px;
   height: 36px;
   border-radius: 0 11px 11px 0;
   background: #ff1744;
 }
-.app-navbar h1{
+.app-navbar h1 {
   user-select: none;
+  cursor: pointer;
 }
 
-.app-user{
+.app-user {
   margin-top: 30px;
 }
-.app-user img{
+.app-user img {
   width: 100px;
   height: 100px;
   background: #8a8a8f;
   border-radius: 50%;
 }
-.app-user h5{
+.app-user h5 {
   color: #b8b8ba;
 }
-.app-user a:hover{
+.app-user a:hover {
   text-decoration: underline;
 }
-.app-container{
+.app-container {
   padding-top: 113px;
 }
 
-
 /* override rc.css*/
-.rc-navbar{
+.rc-navbar {
   position: fixed;
   top: 0;
   z-index: 1;
 }
-.rc-list-item{
+.rc-list-item {
   min-height: 64px;
 }
-.rc-list-item::after{
+.rc-list-item::after {
   left: 80px;
 }
-.rc-list-item img{
+.rc-list-item img {
   width: 50px;
   height: 50px;
   background: #8a8a8f;
