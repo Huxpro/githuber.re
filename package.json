@@ -2,6 +2,7 @@
   "name": "githuber.re",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://huangxuan.me/githuber.re",
   "dependencies": {
     "bs-fetch": "^0.3.0",
     "graphql_ppx": "^0.2.3",
@@ -10,6 +11,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "postbuild": "mv build docs",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "prepare": "npm link bs-platform"
