@@ -10,8 +10,6 @@
 /* alias */
 type reactElement = ReasonReact.reactElement;
 
-module Router = ReasonReact.Router;
-
 /* component */
 type action =
   | Navigate(reactElement);
@@ -21,7 +19,7 @@ type state = {currentRoute: reactElement};
 let component = ReasonReact.reducerComponent("App");
 
 let comp_of_path = url =>
-  switch (Router.(url.path)) {
+  switch (ReasonReact.Router.(url.path)) {
   | [] => <Home />
   | ["search", search] => <Search search />
   | ["user", username] => <User username />
@@ -30,13 +28,11 @@ let comp_of_path = url =>
 
 let make = _children => {
   ...component,
-  initialState: () => {
-    currentRoute: comp_of_path(Router.dangerouslyGetInitialUrl()),
-  },
+  initialState: () => {currentRoute: comp_of_path(Router.getInitialUrl())},
   didMount: self => {
     let watcherID =
       Router.watchUrl(url => Navigate(comp_of_path(url)) |> self.send);
-    self.onUnmount(() => Router.unwatchUrl(watcherID));
+    self.onUnmount(() => ReasonReact.Router.unwatchUrl(watcherID));
   },
   reducer: (action, _state) =>
     switch (action) {

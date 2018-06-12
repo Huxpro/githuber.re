@@ -1,4 +1,4 @@
-# [Githuber.RE](https://huangxuan.me/githuber.re)
+# [Githuber.RE](https://huangxuan.me/githuber.re/)
 
 This project demonstrating the tech stack of:
 

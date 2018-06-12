@@ -63,9 +63,7 @@ let renderList = nodes : ReasonReact.reactElement =>
              <li
                className="rc-list-item"
                key=user##id
-               onClick=(
-                 (_) => ReasonReact.Router.push("/user/" ++ user##login)
-               )>
+               onClick=((_) => Router.push("/user/" ++ user##login))>
                <img src=avatarUrl alt=user##login />
                <span className="rc-list-item__text">
                  (ReasonReact.string(user##login))

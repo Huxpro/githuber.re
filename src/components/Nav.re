@@ -13,7 +13,7 @@ let make = _children => {
       switch (ele##value) {
       | "" => ()
       | searchVal =>
-        ReasonReact.Router.push("/search/" ++ searchVal);
+        Router.push("/search/" ++ searchVal);
         ele##value#="";
         ele##blur();
       };
@@ -23,7 +23,7 @@ let make = _children => {
     ...component,
     render: self =>
       <div className="rc-navbar app-navbar">
-        <h1 onClick=((_) => ReasonReact.Router.push("/"))>
+        <h1 onClick=((_) => Router.push("/"))>
           (ReasonReact.string("Githuber.RE"))
         </h1>
         <form className="flex" onSubmit=onSearch>
