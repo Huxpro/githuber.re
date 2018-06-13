@@ -23,7 +23,7 @@ let make = _children => {
     ...component,
     render: self =>
       <div className="rc-navbar app-navbar">
-        <h1 onClick=((_) => Router.push("/"))>
+        <h1 onClick=(_ => Router.push("/"))>
           (ReasonReact.string("Githuber.RE"))
         </h1>
         <form className="flex" onSubmit=onSearch>

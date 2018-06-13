@@ -45,7 +45,7 @@ let component = ReasonReact.reducerComponent("Search");
  */
 let renderList = nodes : ReasonReact.reactElement =>
   switch (nodes) {
-  | None => assert false /* Empty nodes shouldn't pass usercount check */
+  | None => assert(false) /* Empty nodes shouldn't pass usercount check */
   | Some(nodes) =>
     nodes
     |> Js.Array.map(node =>
@@ -57,13 +57,13 @@ let renderList = nodes : ReasonReact.reactElement =>
            | `User(user) =>
              let avatarUrl =
                switch (Js.Json.decodeString(user##avatarUrl)) {
-               | None => assert false
+               | None => assert(false)
                | Some(url) => url
                };
              <li
                className="rc-list-item"
                key=user##id
-               onClick=((_) => Router.push("/user/" ++ user##login))>
+               onClick=(_ => Router.push("/user/" ++ user##login))>
                <img src=avatarUrl alt=user##login />
                <span className="rc-list-item__text">
                  (ReasonReact.string(user##login))
