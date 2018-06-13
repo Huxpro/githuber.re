@@ -1,36 +1,35 @@
 # [Githuber.RE](https://huangxuan.me/githuber.re/)
 
-This project demonstrates the tech stack of:
+This project demonstrates the following tech stack:
 
 ## [🐫 ReasonML](https://reasonml.github.io/)
 
 Reason is a statically-typed, functional programming language backing by OCaml.
 
-It leverage both the JavaScript & OCaml ecosystems by
-providing a familiar syntax geared toward JavaScript programmers and by catering to the existing NPM/Yarn workflow folks already know.
+It leverage both the JavaScript & OCaml ecosystems by providing a familiar syntax geared toward JavaScript programmers and by catering to the existing NPM/Yarn workflow folks already know.
 
 ## [⚛️ ReasonReact](https://reasonml.github.io/reason-react/en/)
 
-ReasonReact is Reason's official binding to [React.js](https://reactjs.org/). By leveraging the language power of Reason, it pack React.js' features into an API that is staically-typed, simple, familiar and feels "Just using Reason"
+ReasonReact is Reason's official binding to [React.js](https://reactjs.org/). By leveraging the Reason's built-in language features, it pack React.js' APIs into one that is statically-typed, simple, familiar and feels "Just using Reason".
 
-Two of the cool examples are its built-in [ReducerComponent](https://reasonml.github.io/reason-react/docs/en/state-actions-reducer.html) and its built-in [Router](https://reasonml.github.io/reason-react/docs/en/router.html). Both're used in this project!
+Two of the cool examples are its built-in [ReducerComponent](https://reasonml.github.io/reason-react/docs/en/state-actions-reducer.html) and its built-in [ReasonReact Router](https://reasonml.github.io/reason-react/docs/en/router.html). Both are used in this project!
 
 ## [🕸 Graph_PPX](https://github.com/mhallin/graphql_ppx)
 
-GraphQL_PPX is a syntax extension for BuckleScript/Reason. It make constructing GraphQL queries in Reason a first-class experience and type-safe with compile time type check.
+GraphQL_PPX is a syntax extension for BuckleScript/Reason. It make constructing GraphQL queries in Reason a first-class experience and type-safe, with compile time type check instead of runtime errors.
 
-Check out super cool editor intelliSense support at its [homepage](https://github.com/mhallin/graphql_ppx#examples)
+Check out the super cool VSCode editor support on its [homepage](https://github.com/mhallin/graphql_ppx#examples).
 
 ## [🚀 Reason Scripts](https://github.com/reasonml-community/reason-scripts)
 
-Reason Scripts is a community effort porting Create-React-App to Reason, which provides a JS-like development environment for developing web apps with the Reason language and React.
+Reason Scripts is a thin Reason layer over Create-React-App, which provides a JS-like development environment for developing webapps with ReasonReact. Though in most cases, use the [bsb option](https://reasonml.github.io/reason-react/docs/en/installation.html#bsb).
 
-It bootstraps an environment to automatically compile all Reason code to JS, provide features like reloading and bundling, and seamlessly use JS code from Reason.
+It bootstraps an environment to automatically compile all Reason code to JS, provides features like hot reloading and bundling, and seamlessly uses JS code from Reason.
 
 ## [📦 BuckleScript](https://bucklescript.github.io/)
 
-BuckleScript is a optimized compiler and tool chain compiling OCaml/Reason into readable JavaScript code with powerful interop, allowing you accessing the vast ecosystem from both JavaScript and OCaml.
+BuckleScript is a compiler and toolchain that transforms OCaml/Reason into readable JavaScript code. It comes with a powerful API to talk to JS, allowing you to access the latter's vast ecosystem.
 
 ## [🐙 Github GraphQL API](https://developer.github.com/v4/)
 
-[Github announce its v4 public APIs supporting GraphQL at 2016](https://githubengineering.com/the-github-graphql-api/). Thanks to that, we can play and demenstrates GraphQL power and tools without bothering building our own server first.
+[Github announced its public APIs v4 that supports GraphQL](https://githubengineering.com/the-github-graphql-api/). Thanks to that, we can play and demonstrate GraphQL's power without needing to build our own server first.
