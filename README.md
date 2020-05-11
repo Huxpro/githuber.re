@@ -1,5 +1,7 @@
 # [Githuber.RE](https://huangxuan.me/githuber.re/)
 
+> ⚠️ The tech stack used by this project is old and considered deprecated. Check out [V2](https://github.com/Huxpro/githuber.re-v2)!
+
 This project demonstrates the following tech stack:
 
 ## [🐫 ReasonML](https://reasonml.github.io/)
