@@ -6,7 +6,7 @@
   "dependencies": {
     "bs-fetch": "^0.3.0",
     "graphql_ppx": "^0.2.3",
-    "reason-scripts": "0.9.0"
+    "reason-scripts": "1.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
