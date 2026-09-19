@@ -1,4 +1,4 @@
-# [Githuber.RE](https://huangxuan.me/githuber.re/)
+# [Githuber.RE](https://huxpro.github.io/githuber.re/)
 
 > ⚠️ The tech stack used by this project is old and considered deprecated. Check out [V2](https://github.com/Huxpro/githuber.re-v2)!
 

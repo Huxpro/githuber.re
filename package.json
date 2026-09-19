@@ -2,7 +2,7 @@
   "name": "githuber.re",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://huangxuan.me/githuber.re",
+  "homepage": "https://huxpro.github.io/githuber.re",
   "dependencies": {
     "bs-fetch": "^0.3.0",
     "graphql_ppx": "^0.2.3",
